@@ -1,0 +1,35 @@
+name: Missed spam pattern
+description: Report an X/Twitter bot reply pattern that X Reply Janitor should catch.
+title: "[Pattern] "
+labels:
+  - spam-pattern
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for improving X Reply Janitor. Please remove private information before posting examples.
+  - type: textarea
+    id: example
+    attributes:
+      label: Example text
+      description: Paste the spam reply text or a sanitized version.
+      placeholder: "点我头像 ... @example"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it looks like a bot
+      placeholder: "Repeated template, random handle, contact funnel, adult spam..."
+    validations:
+      required: true
+  - type: input
+    id: locale
+    attributes:
+      label: Language or region
+      placeholder: "Chinese, English, Japanese..."
+  - type: textarea
+    id: proposed-rule
+    attributes:
+      label: Proposed keyword or regex
+      placeholder: "/刷了半天.*主页/i"
