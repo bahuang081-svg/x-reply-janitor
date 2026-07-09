@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "X Reply Janitor",
   "version": "0.1.0",
-  "description": "Hide bot-like spam replies on X/Twitter with local, configurable rules.",
+  "description": "Hide spammy bot replies on X/Twitter with local rules. No X API, no tracking.",
   "permissions": [
     "activeTab",
     "storage"
