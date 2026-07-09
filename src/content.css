@@ -1,0 +1,113 @@
+article[data-xrj-hidden="true"] {
+  display: none !important;
+}
+
+article[data-xrj-dimmed="true"] {
+  filter: grayscale(0.75) opacity(0.45);
+  transition: filter 160ms ease;
+}
+
+article[data-xrj-dimmed="true"]:hover,
+article[data-xrj-dimmed="true"]:focus-within {
+  filter: none;
+}
+
+.xrj-placeholder {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgba(83, 100, 113, 0.22);
+  border-left: 4px solid #f45d48;
+  background: rgba(247, 249, 249, 0.96);
+  color: rgb(83, 100, 113);
+  font: 13px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  padding: 10px 14px;
+}
+
+html[data-color-mode="dark"] .xrj-placeholder,
+body[style*="background-color: rgb(0, 0, 0)"] .xrj-placeholder,
+body[style*="background-color: #000"] .xrj-placeholder {
+  border-color: rgba(239, 243, 244, 0.18);
+  background: rgba(22, 24, 28, 0.96);
+  color: rgb(139, 152, 165);
+}
+
+.xrj-placeholder-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.xrj-placeholder strong {
+  color: rgb(15, 20, 25);
+  font-weight: 700;
+}
+
+html[data-color-mode="dark"] .xrj-placeholder strong,
+body[style*="background-color: rgb(0, 0, 0)"] .xrj-placeholder strong,
+body[style*="background-color: #000"] .xrj-placeholder strong {
+  color: rgb(239, 243, 244);
+}
+
+.xrj-placeholder button,
+.xrj-badge button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.xrj-placeholder button {
+  background: rgb(15, 20, 25);
+  color: #fff;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+
+.xrj-reason {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.xrj-badge {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2147483647;
+  display: none;
+  max-width: calc(100vw - 36px);
+  border: 1px solid rgba(83, 100, 113, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 28px rgba(15, 20, 25, 0.15);
+  color: rgb(15, 20, 25);
+  font: 12px/1.2 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  padding: 6px 7px 6px 12px;
+}
+
+.xrj-badge[data-visible="true"] {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.xrj-badge button {
+  background: #f45d48;
+  color: #fff;
+  padding: 5px 9px;
+}
+
+@media (max-width: 520px) {
+  .xrj-badge {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .xrj-placeholder-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
