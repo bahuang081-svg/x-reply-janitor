@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="X Reply Janitor is an open-source browser extension that hides spammy bot replies on X/Twitter with local rules. No X API, no tracking.">
+    <meta name="keywords" content="X bot blocker, Twitter bot blocker, X reply filter, Twitter spam replies, browser extension, WebExtension, no X API">
+    <meta property="og:title" content="X Reply Janitor">
+    <meta property="og:description" content="Hide spammy bot replies on X/Twitter. Local rules, no X API, no tracking.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bahuang081-svg.github.io/x-reply-janitor/">
+    <title>X Reply Janitor - Hide X/Twitter Bot Replies</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
+        --text: #101418;
+        --muted: #5c6975;
+        --line: #d8dee4;
+        --accent: #f45d48;
+        --accent-strong: #c73324;
+        --surface: #f6f8fa;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #111418;
+          --text: #eef2f5;
+          --muted: #9aa6b2;
+          --line: #2a333c;
+          --surface: #171c21;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      main {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 48px 20px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 36px;
+        align-items: center;
+        min-height: 72vh;
+      }
+
+      .mark {
+        width: 76px;
+        height: 76px;
+        border-radius: 18px;
+        box-shadow: 0 18px 45px rgba(244, 93, 72, 0.24);
+      }
+
+      h1 {
+        margin: 18px 0 12px;
+        max-width: 720px;
+        font-size: clamp(42px, 8vw, 86px);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 660px;
+        margin: 0 0 24px;
+        color: var(--muted);
+        font-size: 20px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 26px 0;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        color: var(--text);
+        font-weight: 800;
+        padding: 10px 16px;
+        text-decoration: none;
+      }
+
+      .button.primary {
+        border-color: var(--accent);
+        background: var(--accent);
+        color: #fff;
+      }
+
+      .button.primary:hover {
+        background: var(--accent-strong);
+      }
+
+      .proof {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .proof li {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+        padding: 6px 10px;
+        font-size: 13px;
+      }
+
+      .screen {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(16, 20, 24, 0.14);
+      }
+
+      .screen-bar {
+        display: flex;
+        gap: 7px;
+        border-bottom: 1px solid var(--line);
+        padding: 12px;
+      }
+
+      .dot {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: var(--line);
+      }
+
+      .tweet {
+        border-bottom: 1px solid var(--line);
+        padding: 18px;
+      }
+
+      .tweet strong {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .tweet p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .blocked {
+        border-left: 4px solid var(--accent);
+        background: color-mix(in srgb, var(--accent) 9%, var(--surface));
+      }
+
+      section {
+        border-top: 1px solid var(--line);
+        padding: 34px 0;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+        font-size: 28px;
+        letter-spacing: 0;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .item {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 16px;
+      }
+
+      .item strong {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .item p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      code {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--surface);
+        padding: 2px 5px;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        padding-top: 24px;
+      }
+
+      @media (max-width: 820px) {
+        main {
+          padding-top: 28px;
+        }
+
+        .hero,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          min-height: auto;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "X Reply Janitor",
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Chrome, Edge, Firefox",
+        "softwareVersion": "0.1.0",
+        "license": "https://github.com/bahuang081-svg/x-reply-janitor/blob/main/LICENSE",
+        "codeRepository": "https://github.com/bahuang081-svg/x-reply-janitor",
+        "downloadUrl": "https://github.com/bahuang081-svg/x-reply-janitor/releases/latest/download/x-reply-janitor.zip",
+        "description": "Open-source browser extension that hides spammy bot replies on X/Twitter with local, configurable rules. No X API, no tracking."
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div>
+          <img class="mark" src="https://raw.githubusercontent.com/bahuang081-svg/x-reply-janitor/main/icons/icon128.png" alt="X Reply Janitor icon">
+          <h1>X Reply Janitor</h1>
+          <p class="lead">Hide spammy bot replies on X/Twitter with a local, privacy-first browser extension. No X API, no account token, no tracking.</p>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/bahuang081-svg/x-reply-janitor/releases/latest/download/x-reply-janitor.zip">Download Extension</a>
+            <a class="button" href="https://github.com/bahuang081-svg/x-reply-janitor">Star on GitHub</a>
+          </div>
+          <ul class="proof">
+            <li>Open source</li>
+            <li>Local-only rules</li>
+            <li>Works on x.com</li>
+            <li>Custom regex</li>
+          </ul>
+        </div>
+        <div class="screen" aria-label="Example of blocked X spam replies">
+          <div class="screen-bar">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div class="tweet">
+            <strong>Original post</strong>
+            <p>Reply thread before cleanup...</p>
+          </div>
+          <div class="tweet blocked">
+            <strong>Folded likely bot reply</strong>
+            <p>@random_handle · score 6.3 · mention lure, profile hook</p>
+          </div>
+          <div class="tweet blocked">
+            <strong>Folded likely bot reply</strong>
+            <p>short bait + @handle · repeated template</p>
+          </div>
+          <div class="tweet">
+            <strong>Real reply stays visible</strong>
+            <p>Normal discussion remains readable.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Built for the X bot reply problem</h2>
+        <div class="grid">
+          <div class="item">
+            <strong>Blocks bait replies</strong>
+            <p>Targets short mention funnels, profile hooks, contact spam, and repeated templates.</p>
+          </div>
+          <div class="item">
+            <strong>Private by design</strong>
+            <p>No server, no telemetry, no X API token. Filtering happens in the browser.</p>
+          </div>
+          <div class="item">
+            <strong>Configurable</strong>
+            <p>Choose strength, restore folded replies, whitelist handles, and add custom rules.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Install in minutes</h2>
+        <p>Download the release zip, unzip it, open <code>chrome://extensions</code>, enable Developer mode, and load the unzipped folder.</p>
+        <p>Firefox users can load <code>manifest.json</code> from <code>about:debugging#/runtime/this-firefox</code>.</p>
+      </section>
+
+      <footer>
+        <p>MIT licensed. Not affiliated with X Corp or Twitter. It hides likely spam locally; it does not remove accounts from the platform.</p>
+      </footer>
+    </main>
+  </body>
+</html>
