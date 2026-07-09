@@ -1,0 +1,14 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  extension:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate extension
+        shell: pwsh
+        run: .\tools\validate-extension.ps1
