@@ -19,6 +19,8 @@ $requiredFiles = @(
   "src/options.js",
   "src/options.css",
   "README.md",
+  "INSTALL.md",
+  "llms.txt",
   "LICENSE",
   "PRIVACY.md"
 )
