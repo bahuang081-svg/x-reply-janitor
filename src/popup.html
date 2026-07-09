@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>X Reply Janitor</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>X Reply Janitor</h1>
+          <p id="page-state">等待当前页面...</p>
+        </div>
+        <label class="switch" aria-label="启用扩展">
+          <input id="enabled" type="checkbox">
+          <span></span>
+        </label>
+      </header>
+
+      <section class="stats" aria-label="当前页面统计">
+        <div>
+          <strong id="hidden-count">0</strong>
+          <span>已屏蔽</span>
+        </div>
+        <div>
+          <strong id="scanned-count">0</strong>
+          <span>已检查</span>
+        </div>
+      </section>
+
+      <label class="field">
+        <span>强度</span>
+        <select id="strictness">
+          <option value="relaxed">保守</option>
+          <option value="balanced">均衡</option>
+          <option value="aggressive">强力</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>处理方式</span>
+        <select id="hide-mode">
+          <option value="collapse">折叠并可恢复</option>
+          <option value="hide">直接隐藏</option>
+          <option value="dim">变淡显示</option>
+        </select>
+      </label>
+
+      <label class="check">
+        <input id="scan-everywhere" type="checkbox">
+        <span>在首页/搜索也过滤</span>
+      </label>
+
+      <div class="actions">
+        <button id="rescan" type="button">重新扫描</button>
+        <button id="reveal" type="button">恢复本页</button>
+        <button id="options" type="button">规则</button>
+      </div>
+    </main>
+    <script src="defaults.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
