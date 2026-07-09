@@ -16,6 +16,8 @@ $items = @(
   "src",
   "icons",
   "README.md",
+  "INSTALL.md",
+  "llms.txt",
   "LICENSE",
   "PRIVACY.md"
 )
