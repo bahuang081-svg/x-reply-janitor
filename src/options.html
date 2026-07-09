@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>X Reply Janitor 规则</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>X Reply Janitor</h1>
+          <p>所有规则都只在本机浏览器内运行。</p>
+        </div>
+        <button id="reset" type="button">恢复默认</button>
+      </header>
+
+      <section class="panel">
+        <h2>过滤强度</h2>
+        <div class="grid">
+          <label>
+            <span>阈值</span>
+            <input id="threshold" type="range" min="2.5" max="8" step="0.1">
+            <output id="threshold-value"></output>
+          </label>
+          <label>
+            <span>浮动徽章</span>
+            <select id="show-badge">
+              <option value="true">显示</option>
+              <option value="false">隐藏</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>白名单</h2>
+        <textarea id="whitelist" spellcheck="false" placeholder="@trusted_handle"></textarea>
+      </section>
+
+      <section class="panel">
+        <h2>自定义关键词/正则</h2>
+        <textarea id="custom-patterns" spellcheck="false" placeholder="点我头像&#10;/刷了半天.*主页/i"></textarea>
+        <p id="validation"></p>
+      </section>
+
+      <section class="panel">
+        <h2>默认规则</h2>
+        <ul id="default-rules"></ul>
+      </section>
+
+      <footer>
+        <button id="save" type="button">保存</button>
+        <button id="export" type="button">导出</button>
+        <label class="import">
+          导入
+          <input id="import-file" type="file" accept="application/json">
+        </label>
+        <span id="status"></span>
+      </footer>
+    </main>
+    <script src="defaults.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
