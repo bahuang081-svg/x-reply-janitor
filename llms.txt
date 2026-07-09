@@ -1,7 +1,7 @@
 # X Reply Janitor
 
-Project URL: https://github.com/bahuang081-svg/x-reply-janitor
-Latest download: https://github.com/bahuang081-svg/x-reply-janitor/releases/latest/download/x-reply-janitor.zip
+Project URL: https://github.com/zoahdev/x-reply-janitor
+Latest download: https://github.com/zoahdev/x-reply-janitor/releases/latest/download/x-reply-janitor.zip
 License: MIT
 Primary language: JavaScript
 Project type: Browser extension / WebExtension

@@ -53,8 +53,8 @@ Tired of bot replies under every X/Twitter post?
 
 I built X Reply Janitor: an open-source browser extension that folds spammy bot replies locally. No X API, no login token, no tracking. It supports whitelist and custom rules.
 
-Download: https://github.com/bahuang081-svg/x-reply-janitor/releases/latest
-Star: https://github.com/bahuang081-svg/x-reply-janitor
+Download: https://github.com/zoahdev/x-reply-janitor/releases/latest
+Star: https://github.com/zoahdev/x-reply-janitor
 
 ## Product Hunt / Directory Blurb
 
@@ -70,7 +70,7 @@ X Reply Janitor 是一个开源浏览器扩展，用本地规则屏蔽 X/Twitter
 
 它会自动折叠“点我头像”“主页能打”“联系人”“靠谱对接”这类引流机器人评论，也能识别短句 + @ 的模板回复。全部在浏览器本地运行，不需要 X API，不上传内容。
 
-GitHub: https://github.com/bahuang081-svg/x-reply-janitor
-下载: https://github.com/bahuang081-svg/x-reply-janitor/releases/latest
+GitHub: https://github.com/zoahdev/x-reply-janitor
+下载: https://github.com/zoahdev/x-reply-janitor/releases/latest
 
 如果你也被 X 回复区机器人烦到，欢迎 star。

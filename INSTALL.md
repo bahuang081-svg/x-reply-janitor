@@ -4,7 +4,7 @@ X Reply Janitor is distributed as a downloadable browser extension zip on GitHub
 
 Latest download:
 
-https://github.com/bahuang081-svg/x-reply-janitor/releases/latest/download/x-reply-janitor.zip
+https://github.com/zoahdev/x-reply-janitor/releases/latest/download/x-reply-janitor.zip
 
 ## Chrome / Edge
 

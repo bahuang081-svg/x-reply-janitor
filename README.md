@@ -2,8 +2,8 @@
 
 **Hide spammy bot replies on X/Twitter. Local rules, no X API, no tracking.**
 
-[![Release](https://img.shields.io/github/v/release/bahuang081-svg/x-reply-janitor?label=download)](https://github.com/bahuang081-svg/x-reply-janitor/releases/latest)
-[![Validate](https://github.com/bahuang081-svg/x-reply-janitor/actions/workflows/validate.yml/badge.svg)](https://github.com/bahuang081-svg/x-reply-janitor/actions/workflows/validate.yml)
+[![Release](https://img.shields.io/github/v/release/zoahdev/x-reply-janitor?label=download)](https://github.com/zoahdev/x-reply-janitor/releases/latest)
+[![Validate](https://github.com/zoahdev/x-reply-janitor/actions/workflows/validate.yml/badge.svg)](https://github.com/zoahdev/x-reply-janitor/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 X Reply Janitor is an open-source browser extension for people who are tired of bot-like replies under X/Twitter posts: short bait comments, random handles, `@` mention funnels, adult-service spam, fake contact brokers, and repeated copy-paste templates.
@@ -16,7 +16,7 @@ The extension runs entirely in your browser. It reads only the visible page, sco
 
 Get the latest packaged extension from GitHub Releases:
 
-**[Download X Reply Janitor](https://github.com/bahuang081-svg/x-reply-janitor/releases/latest/download/x-reply-janitor.zip)**
+**[Download X Reply Janitor](https://github.com/zoahdev/x-reply-janitor/releases/latest/download/x-reply-janitor.zip)**
 
 Then unzip it and load it as an unpacked extension.
 
@@ -48,7 +48,7 @@ This project focuses on that problem directly: **blocking bot replies on X witho
 
 ### Chrome / Edge
 
-1. Download `x-reply-janitor.zip` from [the latest release](https://github.com/bahuang081-svg/x-reply-janitor/releases/latest).
+1. Download `x-reply-janitor.zip` from [the latest release](https://github.com/zoahdev/x-reply-janitor/releases/latest).
 2. Unzip the file.
 3. Open `chrome://extensions` or `edge://extensions`.
 4. Enable Developer mode.
@@ -111,7 +111,7 @@ Full policy: [PRIVACY.md](PRIVACY.md).
 
 If this saves your X reply section from spam, please star the repository and share the release link:
 
-https://github.com/bahuang081-svg/x-reply-janitor
+https://github.com/zoahdev/x-reply-janitor
 
 ## Limitations
 

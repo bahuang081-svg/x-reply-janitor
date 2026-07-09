@@ -1,7 +1,7 @@
 {
   "name": "X Reply Janitor",
-  "repository": "https://github.com/bahuang081-svg/x-reply-janitor",
-  "latest_download": "https://github.com/bahuang081-svg/x-reply-janitor/releases/latest/download/x-reply-janitor.zip",
+  "repository": "https://github.com/zoahdev/x-reply-janitor",
+  "latest_download": "https://github.com/zoahdev/x-reply-janitor/releases/latest/download/x-reply-janitor.zip",
   "license": "MIT",
   "type": "browser_extension",
   "targets": ["x.com", "twitter.com"],
