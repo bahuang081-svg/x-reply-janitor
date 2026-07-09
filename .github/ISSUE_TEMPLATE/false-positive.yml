@@ -1,0 +1,33 @@
+name: False positive
+description: Report a normal reply that X Reply Janitor hid by mistake.
+title: "[False positive] "
+labels:
+  - false-positive
+body:
+  - type: markdown
+    attributes:
+      value: |
+        False positives matter. Please remove private information before posting examples.
+  - type: textarea
+    id: example
+    attributes:
+      label: Hidden reply text
+      description: Paste the hidden reply text or a sanitized version.
+    validations:
+      required: true
+  - type: input
+    id: mode
+    attributes:
+      label: Filtering strength
+      placeholder: "Relaxed / Balanced / Aggressive"
+  - type: textarea
+    id: expected
+    attributes:
+      label: Why it should stay visible
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      placeholder: "Chrome, Edge, Firefox..."
